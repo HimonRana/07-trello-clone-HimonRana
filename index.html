@@ -9,57 +9,78 @@
     <link rel="stylesheet" href="app.css">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"> -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/i18n/jquery-ui-i18n.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
 </head>
 
 <body>
+
     <section class="hero is-info">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">Himons Grello</h1>
-                <div>
-                    <a class="button is-warning is-1">Add Card</a>
-                </div>
+        <div class="hero-body"></div>
+        <div class="container">
+            <h1 class="title">Himons Grello</h1>
+            <div>
+                <a class="button is-warning is-1">Add Card</a>
             </div>
+        </div>
         </div>
     </section>
 
-    <div class="columns is-mobile">
+    <div class="columns is-half is-mobile">
 
         <div class="column">
             <div class="card">
-                <div class="title">To-do
-                    <div class="field">
-                        <textarea class="textarea is-info" type="text" placeholder="Info textarea"></textarea>
-                        <a class="button is-success">Add</a>
-                    </div>
-                </div>
+                <div class="title">To-do</div>
+                <ul id="sortable">
+<!--                <li class="cardList">
+                        <article class="column">
+                            <div class="message-header">
+                                <button class="delete" aria-label="delete"></button>
+                            </div>
+                            <div class="message-body">
+
+                            </div>
+                        </article>
+                    </li> -->
+                </ul>
+                <form>
+                    <textarea class="textarea is-info" type="text" name="listDescription" placeholder="Info textarea"></textarea>
+                    <a class="button btn is-success">Add</a>
+                </form>
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <div class="title">Doing
-                    <div class="field">
-                        <textarea class="textarea is-info" type="text" placeholder="Info textarea"></textarea>
-                        <a class="button is-success">Add</a>
-                    </div>
-                </div>
+                <div class="title">Doing</div>
+                <ul id="sortable">
+
+                </ul>
+                <form>
+                    <textarea class="textarea is-info" type="text" placeholder="Info textarea"></textarea>
+                    <a class="button btn is-success">Add</a>
+                </form>
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <div class="title">Done
-                    <div class="field">
-                        <textarea class="textarea is-info" type="text" placeholder="Info textarea"></textarea>
-                        <a class="button is-success">Add</a>
-                    </div>
-                </div>
+                <div class="title">Done</div>
+                <ul id="sortable">
+
+                </ul>
+                <form>
+                    <textarea class="textarea is-info" type="text" placeholder="Info textarea"></textarea>
+                    <a class="button btn is-success">Add</a>
+                </form>
             </div>
         </div>
-
 
     </div>
 </body>
+<script src="app.js"></script>
 
 </html>
