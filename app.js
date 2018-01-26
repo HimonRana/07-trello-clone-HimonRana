@@ -4,8 +4,16 @@
 }); */
 
 $(function() {
-  $("#sortable").sortable({
-    connectWith: "is-auto"
+  $("ul.ul-list1").sortable({
+    connectWith: "ul"
+  });
+
+  $("ul.ul-list2").sortable({
+    connectWith: "ul",
+  });
+
+  $("ul.ul-list3").sortable({
+    connectWith: "ul",
   });
 
   /*var message = $(`
@@ -20,14 +28,36 @@ $(function() {
     </article>
     `);
 */
-  $(".btn").on("click", function() {
-    var addCard = $("textarea").val();
+  $(".btn1").on("click", function() {
+    var addCard = $(".text1").val();
 
-    $("ul").append('<li class="cardList"><article class="column"><div class="message-header"><button class="delete" aria-label="delete"></button></div><div class="message-body">'+ addCard +'</div></article></li>');
+    $("#sortable1").append('<li class="cardList"><article class="column"><div class="message-header"><button class="delete" aria-label="delete"></button></div><div class="message-body">'+ addCard +'</div></article></li>');
   });
 
-  $('#sortable').on('click', '.delete', function(){
-      $('ul').remove();
+  $('.card').on('click', '.delete', function(){
+      $(this).closest('li').remove();
+  });
+
+
+  $(".btn2").on("click", function() {
+    var addCard = $(".text2").val();
+
+    $("#sortable2").append('<li class="cardList"><article class="column"><div class="message-header"><button class="delete" aria-label="delete"></button></div><div class="message-body">'+ addCard +'</div></article></li>');
+  });
+
+  $('.card').on('click', '.delete', function(){
+      $(this).closest('li').remove();
+  });
+
+
+  $(".btn3").on("click", function() {
+    var addCard = $(".text3").val();
+
+    $("#sortable3").append('<li class="cardList"><article class="column"><div class="message-header"><button class="delete" aria-label="delete"></button></div><div class="message-body">'+ addCard +'</div></article></li>');
+  });
+
+  $('.card').on('click', '.delete', function(){
+      $(this).closest('li').remove();
   });
 
 });
