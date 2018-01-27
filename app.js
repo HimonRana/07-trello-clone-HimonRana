@@ -1,5 +1,13 @@
 $(function() {
-  
+  $('div.column1').sortable({
+    connectWith: ".column"
+  });
+  $('div.column2').sortable({
+    connectWith: ".column"
+  });
+  $('div.column3').sortable({
+    connectWith: ".column"
+  });
 
 
   /* Drag around list */
