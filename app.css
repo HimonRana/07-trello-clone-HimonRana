@@ -56,6 +56,7 @@ h6 {
 }
 ul {
   list-style: none;
+  min-height: 10px
 }
 button,
 input,
@@ -4543,7 +4544,8 @@ a.tag:hover {
   font-weight: 600;
   line-height: 1.125;
   margin: 0.5em 0;
- 
+  display: flex;
+  justify-content: space-between;
 }
 .title strong {
   color: inherit;
@@ -5418,7 +5420,7 @@ a.dropdown-item.is-active {
   line-height: 1.25;
   padding: 0.5em 0.75em;
   position: relative;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .message-header .delete {
   -webkit-box-flex: 0;
@@ -5437,7 +5439,7 @@ a.dropdown-item.is-active {
   border: 1px solid #dbdbdb;
   border-radius: 3px;
   color: #4a4a4a;
-  padding: 1em 1.25em;
+  padding: 0.3em 0.3em;
   background-color: #dbdbdb;
   display: flex;
 }

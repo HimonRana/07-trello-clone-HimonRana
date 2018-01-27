@@ -11,19 +11,27 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/i18n/jquery-ui-i18n.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 </head>
 
 <body>
+        <div class="info-edit" id="infoDialog">
+                
+        </div>
+
+    <div class="hide" id="dialog">
+
+    </div>
 
     <section class="hero is-info">
         <div class="hero-body"></div>
         <div class="container">
             <h1 class="title">Himons Grello</h1>
             <div>
-                <a class="button is-warning is-1">Add Card</a>
+                <a class="dialogBtn button is-warning">Add Card</a>
             </div>
         </div>
         </div>
@@ -33,15 +41,22 @@
 
         <div class="column">
             <div class="card">
-                <div class="title">To-do</div>
+                <div class="title card-title">
+                    To-do
+                    <button class="delete card-delete" aria-label="delete"></button>
+                </div>
                 <ul id="sortable1" class="ul-list1">
-<!--                <li class="cardList">
-                        <article class="column">
+<!--                    <li class="cardList">
+                        <article class="column card-title">
                             <div class="message-header">
+                                <p>Date:
+                                    <input type="text" id="datepicker">
+                                </p>
+                                <button class="info infoBtn" id="infoDialog" aria-label="delete">i</button>
                                 <button class="delete" aria-label="delete"></button>
                             </div>
                             <div class="message-body">
-
+                
                             </div>
                         </article>
                     </li> -->
@@ -57,7 +72,10 @@
 
         <div class="column">
             <div class="card">
-                <div class="title">Doing</div>
+                    <div class="title">
+                            Doing
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
                 <ul id="sortable2" class="ul-list2">
 
                 </ul>
@@ -72,7 +90,10 @@
 
         <div class="column">
             <div class="card">
-                <div class="title">Done</div>
+                    <div class="title">
+                            Done
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
                 <ul id="sortable3" class="ul-list3">
 
                 </ul>
@@ -84,6 +105,8 @@
                 </form>
             </div>
         </div>
+
+        
 
     </div>
 </body>
