@@ -9,57 +9,107 @@
     <link rel="stylesheet" href="app.css">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"> -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/i18n/jquery-ui-i18n.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
 </head>
 
 <body>
+        <div class="info-edit" id="infoDialog">
+                
+        </div>
+
+    <div class="hide" id="dialog">
+
+    </div>
+
     <section class="hero is-info">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">Himons Grello</h1>
-                <div>
-                    <a class="button is-warning is-1">Add Card</a>
-                </div>
+        <div class="hero-body"></div>
+        <div class="container">
+            <h1 class="title">Himons Grello</h1>
+            <div>
+                <a class="dialogBtn button is-warning">Add Card</a>
             </div>
+        </div>
         </div>
     </section>
 
-    <div class="columns is-mobile">
+    <div class="columns is-half is-mobile">
 
-        <div class="column">
+        <div class="column column1">
             <div class="card">
-                <div class="title">To-do
-                    <div class="field">
-                        <textarea class="textarea is-info" type="text" placeholder="Info textarea"></textarea>
-                        <a class="button is-success">Add</a>
-                    </div>
+                <div class="title card-title">
+                    To-do
+                    <button class="delete card-delete" aria-label="delete"></button>
                 </div>
+                <ul id="sortable1" class="ul-list1">
+<!--                    <li class="cardList">
+                        <article class="column card-title">
+                            <div class="message-header">
+                                <p>Date:
+                                    <input type="text" id="datepicker">
+                                </p>
+                                <button class="info infoBtn" id="infoDialog" aria-label="delete">i</button>
+                                <button class="delete" aria-label="delete"></button>
+                            </div>
+                            <div class="message-body">
+                
+                            </div>
+                        </article>
+                    </li> -->
+                </ul>
+                <form>
+                    <div class="control">
+                        <input class="input text1" type="text" placeholder="Text input">
+                    </div>
+                    <a class="button btn1 is-success">Add</a>
+                </form>
             </div>
         </div>
 
-        <div class="column">
+        <div class="column column2">
             <div class="card">
-                <div class="title">Doing
-                    <div class="field">
-                        <textarea class="textarea is-info" type="text" placeholder="Info textarea"></textarea>
-                        <a class="button is-success">Add</a>
+                    <div class="title">
+                            Doing
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
+                <ul id="sortable2" class="ul-list2">
+
+                </ul>
+                <form>
+                    <div class="control">
+                        <input class="input text2" type="text" placeholder="Text input">
                     </div>
-                </div>
+                    <a class="button btn2 is-success">Add</a>
+                </form>
             </div>
         </div>
 
-        <div class="column">
+        <div class="column column3">
             <div class="card">
-                <div class="title">Done
-                    <div class="field">
-                        <textarea class="textarea is-info" type="text" placeholder="Info textarea"></textarea>
-                        <a class="button is-success">Add</a>
+                    <div class="title">
+                            Done
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
+                <ul id="sortable3" class="ul-list3">
+
+                </ul>
+                <form>
+                    <div class="control">
+                        <input class="input text3" type="text" placeholder="Text input">
                     </div>
-                </div>
+                    <a class="button btn3 is-success">Add</a>
+                </form>
             </div>
         </div>
 
+        
 
     </div>
 </body>
+<script src="app.js"></script>
 
 </html>

@@ -56,6 +56,7 @@ h6 {
 }
 ul {
   list-style: none;
+  min-height: 10px
 }
 button,
 input,
@@ -2731,12 +2732,12 @@ a.box:active {
   display: block;
   max-width: 100%;
   min-width: 100%;
-  padding: 0.625em;
+  //padding: 0.625em;
   resize: vertical;
 }
 .textarea:not([rows]) {
   max-height: 600px;
-  min-height: 120px;
+  //min-height: 120px;
 }
 .textarea[rows] {
   height: unset;
@@ -4517,7 +4518,7 @@ a.tag:hover {
 }
 .subtitle:not(:last-child),
 .title:not(:last-child) {
-  
+
 }
 .subtitle em,
 .subtitle span,
@@ -4542,6 +4543,9 @@ a.tag:hover {
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125;
+  margin: 0.5em 0;
+  display: flex;
+  justify-content: space-between;
 }
 .title strong {
   color: inherit;
@@ -4865,6 +4869,7 @@ a.tag:hover {
   color: #4a4a4a;
   max-width: 100%;
   position: relative;
+  border-radius: 5px;
 }
 .card-header {
   -webkit-box-align: stretch;
@@ -5411,10 +5416,11 @@ a.dropdown-item.is-active {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  //justify-content: space-between;
   line-height: 1.25;
   padding: 0.5em 0.75em;
   position: relative;
+  justify-content: space-between;
 }
 .message-header .delete {
   -webkit-box-flex: 0;
@@ -5433,7 +5439,9 @@ a.dropdown-item.is-active {
   border: 1px solid #dbdbdb;
   border-radius: 3px;
   color: #4a4a4a;
-  padding: 1em 1.25em;
+  padding: 0.3em 0.3em;
+  background-color: #dbdbdb;
+  display: flex;
 }
 .message-body code,
 .message-body pre {
@@ -7130,7 +7138,7 @@ label.panel-block:hover {
   flex-grow: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  padding: 0.75rem;
+  padding: 0.3rem;
 }
 .columns.is-mobile > .column.is-narrow {
   -webkit-box-flex: 0;
@@ -8598,6 +8606,7 @@ label.panel-block:hover {
 }
 .columns:not(:last-child) {
   margin-bottom: calc(1.5rem - 0.75rem);
+  padding: 0 1em;
 }
 .columns.is-centered {
   -webkit-box-pack: center;
