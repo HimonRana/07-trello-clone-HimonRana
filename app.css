@@ -97,7 +97,7 @@ th {
   text-align: left;
 }
 html {
-  background-color: rgb(53, 163, 103);
+  background-color: rgb(73, 88, 79);
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -9716,3 +9716,26 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 /*# sourceMappingURL=bulma.min.css.map */
+
+
+/* MY OWN CSS */
+
+.div-columns {
+  display: block;
+  background-color: rgba(13, 50, 73, 0.435);
+  border-color: transparent;
+  box-shadow: none;
+  border-radius: 3px;
+  height: 100%;
+  width: 100%;
+}
+
+.card-List {
+  display: block;
+  background-color: rgba(33, 34, 33, 0.2);
+  border-color: transparent;
+  box-shadow: none;
+  border-radius: 3px;
+  height: 50px;
+  width: 100%;
+}

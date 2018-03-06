@@ -1,34 +1,36 @@
 $(function() {
-  $('div.column1').sortable({
-    connectWith: ".column"
-  });
-  $('div.column2').sortable({
-    connectWith: ".column"
-  });
-  $('div.column3').sortable({
-    connectWith: ".column"
+  $('div.column1, div.column2, div.column3').sortable({
+    connectWith: '.column',
+    opacity: 0.80,
+    revert: true,
+    containment: 'document',
+    cursor: 'option',
+    tolerance: 'pointer',
+    placeholder: 'div-columns',
+    
   });
 
 
   /* Drag around list */
-  $("ul.ul-list1").sortable({
-    connectWith: "ul"
+  $('ul.ul-list1, ul.ul-list2, ul.ul-list3').sortable({
+    connectWith: 'ul',
+    opacity: 0.80,
+    revert: true,
+    cursor: 'option',
+    containment: 'document',
+    tolerance: 'pointer',
+    placeholder: 'card-List',
   });
 
-  $("ul.ul-list2").sortable({
-    connectWith: "ul",
-  });
+  /* EDIT */
+  var messageEdit ="";
 
-  $("ul.ul-list3").sortable({
-    connectWith: "ul",
-  });
 
-  /* Open a new Popup-Dialog */
-  $('.dialogBtn').click( function() {
-    $('#dialog').dialog();
-    $(this).addClass('is-loading');
-  });
 
+ /* Title effect, tabs on dialog */
+  $('body').effect('bounce');
+  $('.info-edit').hide().tabs();
+  
 
   /* Add new list */
   $('.btn1').on('click', function() {
@@ -36,18 +38,14 @@ $(function() {
     var clearText = $(this).closest('form');
     clearText.find('input').val('');
     
-    $('#sortable1').append('<li class="cardList"><article class="column"><div class="message-header"><p>Date: <input type="text" id="datepicker1"><button class="info infoBtn" aria-label="delete">edit</button></p><button class="delete" aria-label="delete"></button></div><div class="message-body">'+ addCard +'</div></article></li>');
+    $('#sortable1').append('<li class="cardList"><article class="column"><div class="message-header"><p>Date: <input type="text" id="datepicker1"></p><button class="info infoBtn" aria-label="delete">edit</button><button class="delete" aria-label="delete"></button></div><div class="message-body" id="message-edit">'+ addCard +'</div></article></li>');
     $('#datepicker1').datepicker( $.datepicker.regional[ "sv" ] );
     
-    $('.infoBtn').click( function() {
+    $('.info').click( function() {
       $('#infoDialog').dialog();
     });
   });
   
-  
-  $('.card').on('click', '.delete', function(){
-      $(this).closest('li').remove();
-  });
 
   /*--------------------------------*/
 
@@ -55,17 +53,13 @@ $(function() {
     var addCard = $('.text2').val();
     var clearText = $(this).closest('form');
     clearText.find('input').val('');
-
-    $('#sortable2').append('<li class="cardList"><article class="column"><div class="message-header"><p>Date: <input type="text" id="datepicker2"></p><button class="info infoBtn" aria-label="delete">edit</button><button class="delete" aria-label="delete"></button></div><div class="message-body">'+ addCard +'</div></article></li>');
+  
+    $('#sortable2').append('<li class="cardList"><article class="column"><div class="message-header"><p>Date: <input type="text" id="datepicker2"></p><button class="info infoBtn" aria-label="delete">edit</button><button class="delete" aria-label="delete"></button></div><div class="message-body" id="message-edit">'+ addCard +'</div></article></li>');
     $('#datepicker2').datepicker( $.datepicker.regional[ "sv" ] );
     
-    $('.info').click( function() {
+    $('.info').click(function() {
       $('#infoDialog').dialog();
     });
-  });
-
-  $('.card').on('click', '.delete', function(){
-      $(this).closest('li').remove();
   });
 
   /*--------------------------------*/
@@ -75,15 +69,39 @@ $(function() {
     var clearText = $(this).closest('form');
     clearText.find('input').val('');
 
-    $('#sortable3').append('<li class="cardList"><article class="column"><div class="message-header"><p>Date: <input type="text" id="datepicker3"></p><button class="info infoBtn" aria-label="delete">edit</button><button class="delete" aria-label="delete"></button></div><div class="message-body">'+ addCard +'</div></article></li>');
+    $('#sortable3').append('<li class="cardList"><article class="column"><div class="message-header"><p>Date: <input type="text" id="datepicker3"></p><button class="info infoBtn" aria-label="delete">edit</button><button class="delete" aria-label="delete"></button></div><div class="message-body" id="message-edit">'+ addCard +'</div></article></li>');
     $('#datepicker3').datepicker( $.datepicker.regional[ "sv" ] );
+
     $('.info').click( function() {
       $('#infoDialog').dialog();
     });
   });
 
+  /* DELETE LISTS */
   $('.card').on('click', '.delete', function(){
-      $(this).closest('li').remove();
+    $(this).closest('li').effect('explode').remove();
   });
 
+  /* WIDGET */
+
+  $.widget('custom.progressbar', {
+
+    _create: function () {
+      this._refresh();
+    },
+    _refresh: function () {
+      $('html').css('background-color', this.options.color)
+    },
+    change: function (value) {
+      this.options.color = this.options.color === 'rgb(73, 88, 79)' ? 'rgb(190, 190, 190)' : 'rgb(73, 88, 79)' ;
+      this._refresh();
+    }
+  });
+  
+  $('html').progressbar();
+  
+  
+  $('html').on('click', '.colorBtn', function() {
+    $('html').progressbar('change');
+  })
 });

@@ -18,26 +18,44 @@
 </head>
 
 <body>
-        <div class="info-edit" id="infoDialog">
-                
+    <div class="info-edit" id="infoDialog">
+        <ul>
+            <li>
+                <a href="#tab1">
+                    <span>Edit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#tab2">
+                    <span>Date</span>
+                </a>
+            </li>
+        </ul>
+        <div id="tab1">
+            <input class="input text1" type="text" placeholder="Text input" name="text">
+            <!--<a class="dialogBtn button is-warning">Update</a> -->
         </div>
+        <div id="tab2">
 
-    <div class="hide" id="dialog">
-
+        </div>
     </div>
+
+    <!--  <div class="hide" id="dialog">
+
+    </div> -->
 
     <section class="hero is-info">
         <div class="hero-body"></div>
         <div class="container">
             <h1 class="title">Himons Grello</h1>
             <div>
-                <a class="dialogBtn button is-warning">Add Card</a>
+                <a class="colorBtn button is-warning">Change Background</a>
             </div>
         </div>
         </div>
     </section>
 
-    <div class="columns is-half is-mobile">
+    <div class="columns is-mobile">
 
         <div class="column column1">
             <div class="card">
@@ -46,16 +64,16 @@
                     <button class="delete card-delete" aria-label="delete"></button>
                 </div>
                 <ul id="sortable1" class="ul-list1">
-<!--                    <li class="cardList">
+                    <!--                    <li class="cardList">
                         <article class="column card-title">
                             <div class="message-header">
                                 <p>Date:
-                                    <input type="text" id="datepicker">
+                                    <input type="text" id="datepicker1">
                                 </p>
-                                <button class="info infoBtn" id="infoDialog" aria-label="delete">i</button>
+                                <button class="info editBtn" aria-label="delete">i</button>
                                 <button class="delete" aria-label="delete"></button>
                             </div>
-                            <div class="message-body">
+                            <div class="message-body" id="message-edit">
                 
                             </div>
                         </article>
@@ -72,10 +90,10 @@
 
         <div class="column column2">
             <div class="card">
-                    <div class="title">
-                            Doing
-                            <button class="delete" aria-label="delete"></button>
-                        </div>
+                <div class="title">
+                    Doing
+                    <button class="delete" aria-label="delete"></button>
+                </div>
                 <ul id="sortable2" class="ul-list2">
 
                 </ul>
@@ -90,10 +108,10 @@
 
         <div class="column column3">
             <div class="card">
-                    <div class="title">
-                            Done
-                            <button class="delete" aria-label="delete"></button>
-                        </div>
+                <div class="title">
+                    Done
+                    <button class="delete" aria-label="delete"></button>
+                </div>
                 <ul id="sortable3" class="ul-list3">
 
                 </ul>
@@ -106,7 +124,7 @@
             </div>
         </div>
 
-        
+
 
     </div>
 </body>
